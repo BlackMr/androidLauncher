@@ -23,11 +23,10 @@ constructor(private http: Http, private builder: FormBuilder) {
 
     // Synchronous validators are passed in as the second
     // argument to our Controls
-    this.firstName = new Control('', Validators.required)
-    this.lastName = new Control('', Validators.required)
+    this.firstName = new Control('', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(30)]));
+    this.lastName = new Control('', Validators.compose([Validators.required, Validators.minLength(3),Validators.maxLength(30)]));
     // If we want to use more than one synchronous validators, we need to compose them
-    this.email = new Control('', Validators.compose([Validators.required, Validators.minLength(8)]))
-
+    this.email = new Control('', Validators.compose([Validators.required, Validators.minLength(8),Validators.maxLength(30)]));
     this.registrationForm = builder.group({
       firstName: this.firstName,
       lastName: this.lastName,
