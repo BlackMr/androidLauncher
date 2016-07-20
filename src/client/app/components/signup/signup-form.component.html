@@ -1,0 +1,64 @@
+
+
+  <form [ngFormModel]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
+
+    <div class="form-group">
+      <label for="firstName">Firstname</label>
+      <input id="firstName" type="text" class="form-control" placeholder="First Name" ngControl="firstName" minlength="3" maxlength="30" required>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">LastName</label>
+      <input id="lastName" type="text" class="form-control" placeholder="Last Name" ngControl="lastName" minlength="3" maxlength="30" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" class="form-control" placeholder="Email" ngControl="email"  maxlength="30" required>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+
+  </form>
+
+
+
+<!--
+<form (submit)="onSubmit()" [formGroup]="form" name="signup" novalidate >
+        <div class="form-group">
+              <div>
+                <input [(ngModel)]="firstName" type="text" name="firstName" ngControl="firstName" minlength="3" class="form-control" required>
+              </div>
+        </div>
+        <div class="form-group">   
+              <div>
+                <input [(ngModel)]="lastName" type="text" name="lastName" minlength="3" class="form-control" required>
+              </div>
+        </div>
+        <div class="form-group"> 
+              <div>
+                 <input [(ngModel)]="email" type="text" name="email" minlength="3" class="form-control" required>
+              </div>
+        </div>       
+              <button type="submit" class="btn btn-default">
+                signup
+            </button>
+        
+            
+</form>
+-->
+
+
+              <!--
+              <div>
+                 <input [(ngModel)]="password" type="text" name="password" required>
+              </div>
+          
+              <div>
+                <div>
+                 <input [(ngModel)]="termsAgreement" type="checkbox" name="termsAgreement" required>
+                </div>
+              </div>
+              -->

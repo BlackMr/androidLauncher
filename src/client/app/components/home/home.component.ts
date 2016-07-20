@@ -34,16 +34,5 @@ export class HomeComponent {
 
   }
   /*======================================================================================*/
-/*  signupMe(): boolean {
-    let firstone = this.firstOne;
-    if (firstone) {
-      console.log(firstone);
-      console.log('running signup');
-      return true;
-    } else {
-      console.log('not running');
-      return true;
-    }
-  }
-*/
+
 };

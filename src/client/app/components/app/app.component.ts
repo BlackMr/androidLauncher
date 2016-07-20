@@ -9,6 +9,7 @@ import {LangSwitcherComponent} from '../../frameworks/i18n/index';
 import {NavbarComponent} from './navbar.component';
 import {ToolbarComponent} from './toolbar.component';
 
+
 @RouteComponent({
   moduleId: module.id,
   selector: 'sd-app',
