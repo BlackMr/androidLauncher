@@ -35,11 +35,14 @@ constructor(private http: Http, private builder: FormBuilder) {
 }
 
  registerUser(user:any):void {
+     
     this.submitAttempt = true;
+    if (this.registrationForm.valid) {
       console.log('User is '+ user.firstName +" "+ user.lastName +" "+user.email );
     console.log('Successful login');
-
-  }
+     }
+     }
+    //console.log(user.firstName.Validators.compose);
 /*
   submitted = false;
   onSubmit() { this.submitted = true;
