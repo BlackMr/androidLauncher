@@ -7,7 +7,7 @@
               <em *ngIf="firstName.hasError('required') && submitAttempt">Required</em>
         <em *ngIf="firstName.hasError('minlength') && submitAttempt">Must be at least 3 characters</em>
      
-      <input id="firstName" type="text" class="form-control" placeholder="First Name" ngControl="firstName" >
+      <input [ngStyle]="setStyles(firstName)" id="firstName" type="text" class="form-control" placeholder="First Name" ngControl="firstName" >
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error' : !lastName.valid && submitAttempt }">
@@ -15,21 +15,21 @@
 
       <em *ngIf="lastName.hasError('required') && submitAttempt">Required</em>
         <em *ngIf="lastName.hasError('minlength') && submitAttempt">Must be at least 3 characters</em>
-      <input id="lastName" type="text" class="form-control" placeholder="Last Name" ngControl="lastName" >
+      <input [ngStyle]="setStyles(lastName)" id="lastName" type="text" class="form-control" placeholder="Last Name" ngControl="lastName" >
     </div>
 
     <div class="form-group" [ngClass]="{ 'has-error' : !email.valid && submitAttempt }">
        <label class="control-label" for="email">email</label>
         <em *ngIf="email.hasError('required') && submitAttempt">Required</em>
         <em *ngIf="email.hasError('minlength') && submitAttempt">Must be at least 8 characters</em>
-      <input id="email" type="email" class="form-control" placeholder="Email" ngControl="email" >
+      <input [ngStyle]="setStyles(email)" id="email" type="email" class="form-control" placeholder="Email" ngControl="email" >
     </div>
 
     <div class="form-group">
         
       <button type="submit" class="btn btn-primary">Register</button>
     </div>
-
+    <div class="example">HELLO</div>
   </form>
 
 

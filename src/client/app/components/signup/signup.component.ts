@@ -9,6 +9,7 @@ import {SignupFormComponent} from '../signup/signup-form.component';
   directives:[SignupFormComponent],
 })
 export class SignupComponent  {
+  /*
   public firstName: string = '';
   public lastName: string = '';
   public email: string = '';  
@@ -27,7 +28,7 @@ export class SignupComponent  {
       return true;
     }
   }
-
+*/
 
 }
 
