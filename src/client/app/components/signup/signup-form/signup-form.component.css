@@ -1,0 +1,6 @@
+form-group.has-error {
+    border-color: red;
+}
+.example{
+    color: orange;
+}

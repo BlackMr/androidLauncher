@@ -1,2 +1,13 @@
-  <TextField [(ngModel)]="firstOne" autocapitalizationType="none"></TextField>
-  <Button (tap)="signupMe()"></Button>
+
+<ActionBar title="Angular 2"> 
+</ActionBar>
+<StackLayout class="container">
+<StackLayout class="container-content">
+  <Label [text]="'TRY' | translate" textWrap="true" class="love-tech"></Label>
+  <Label [text]="'SUCCESS_MSG' | translate" textWrap="true"></Label>
+
+<ScrollView>
+    <signup-form></signup-form>
+</ScrollView>
+</StackLayout>
+</StackLayout>

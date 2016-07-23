@@ -5,10 +5,10 @@ import {disableDeprecatedForms, provideForms} from '@angular/forms/index';
 
 import {t} from '../../frameworks/test/index';
 import {TEST_CORE_PROVIDERS} from '../../frameworks/core/testing/index';
-import {SupportComponent} from './support.component';
+import {VerifyComponent} from './verify.component';
 
 export function main() {
-  t.describe('@Component: SupportComponent', () => {
+  t.describe('@Component: AboutComponent', () => {
     // Disable old forms
     let providerArr: any[];
 
@@ -31,7 +31,7 @@ export function main() {
     TEST_CORE_PROVIDERS()
   ],
   selector: 'test-cmp',
-  directives: [SupportComponent],
-  template: '<sd-support></sd-support>'
+  directives: [VerifyComponent],
+  template: '<sd-about></sd-about>'
 })
 class TestComponent {}
