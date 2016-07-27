@@ -4,7 +4,8 @@ export class Registrant {
     public lastName: string,
     public email: string
   ) {  }
-}
+
+  }
 /*
 export class REG {
     firstName: string;

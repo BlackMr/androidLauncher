@@ -1,6 +1,4 @@
-
-
-  <form [ngFormModel]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
+<form [ngFormModel]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
 
     <div class="form-group" [ngClass]="{ 'has-error' : !firstName.valid && submitAttempt }">
        <label class="control-label" for="firstName">First Name</label>
@@ -25,49 +23,43 @@
       <input [ngStyle]="setStyles(email)" id="email" type="email" class="form-control" placeholder="Email" ngControl="email" >
     </div>
 
-    <div class="form-group">
-        
+    <div class="form-group"> 
       <button type="submit" class="btn btn-primary">Register</button>
     </div>
-    <div class="example">HELLO</div>
-  </form>
+    
+    </form>
+    
 
 
+    <!--
+      <form [ngFormModel]="registrationForm" (ngSubmit)="registerUser(registrationForm.value)">
 
-<!--
-<form (submit)="onSubmit()" [formGroup]="form" name="signup" novalidate >
-        <div class="form-group">
-              <div>
-                <input [(ngModel)]="firstName" type="text" name="firstName" ngControl="firstName" minlength="3" class="form-control" required>
-              </div>
-        </div>
-        <div class="form-group">   
-              <div>
-                <input [(ngModel)]="lastName" type="text" name="lastName" minlength="3" class="form-control" required>
-              </div>
-        </div>
-        <div class="form-group"> 
-              <div>
-                 <input [(ngModel)]="email" type="text" name="email" minlength="3" class="form-control" required>
-              </div>
-        </div>       
-              <button type="submit" class="btn btn-default">
-                signup
-            </button>
-        
-            
-</form>
--->
+    <div class="form-group" [ngClass]="{ 'has-error' : !firstName.valid && submitAttempt }">
+       <label class="control-label" for="firstName">First Name</label>
+              <em *ngIf="firstName.hasError('required') && submitAttempt">Required</em>
+        <em *ngIf="firstName.hasError('minlength') && submitAttempt">Must be at least 3 characters</em>
+     
+      <input [ngStyle]="setStyles(firstName)" id="firstName" type="text" class="form-control" placeholder="First Name" ngControl="firstName" >
+    </div>
 
+    <div class="form-group" [ngClass]="{ 'has-error' : !lastName.valid && submitAttempt }">
+      <label class="control-label" for="lastname">Last Name</label>
 
-              <!--
-              <div>
-                 <input [(ngModel)]="password" type="text" name="password" required>
-              </div>
-          
-              <div>
-                <div>
-                 <input [(ngModel)]="termsAgreement" type="checkbox" name="termsAgreement" required>
-                </div>
-              </div>
-              -->
+      <em *ngIf="lastName.hasError('required') && submitAttempt">Required</em>
+        <em *ngIf="lastName.hasError('minlength') && submitAttempt">Must be at least 3 characters</em>
+      <input [ngStyle]="setStyles(lastName)" id="lastName" type="text" class="form-control" placeholder="Last Name" ngControl="lastName" >
+    </div>
+
+    <div class="form-group" [ngClass]="{ 'has-error' : !email.valid && submitAttempt }">
+       <label class="control-label" for="email">email</label>
+        <em *ngIf="email.hasError('required') && submitAttempt">Required</em>
+        <em *ngIf="email.hasError('minlength') && submitAttempt">Must be at least 8 characters</em>
+      <input [ngStyle]="setStyles(email)" id="email" type="email" class="form-control" placeholder="Email" ngControl="email" >
+    </div>
+
+    <div class="form-group"> 
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+    
+    </form>
+    -->
