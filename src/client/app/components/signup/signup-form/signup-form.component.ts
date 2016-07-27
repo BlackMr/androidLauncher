@@ -1,7 +1,6 @@
-import {BaseComponent} from '../../frameworks/core/index';
-
-import {Registrant} from './registrant';
-
+import {BaseComponent} from '../../../frameworks/core/index';
+/* import {Registrant} from './registrant'; */
+/* import { NgForm }    from '@angular/forms'; */
 import {FORM_DIRECTIVES, FormBuilder, Control, ControlGroup, Validators} from '@angular/common';
 import {ROUTER_DIRECTIVES } from '@angular/router';
 import {Router} from '@angular/router';
@@ -52,12 +51,15 @@ setStyles(element:Control) {
       console.log('User is '+ user.firstName +' '+ user.lastName +' '+user.email );
     console.log('Successful login');
     this._router.navigate(['/verify']);
-     }
-     }
+
     //console.log(user.fitrstName.Validators.compose);
-/*
-  submitted = false;
-  onSubmit() { this.submitted = true;
-      console.log('YES YES YES'); }
-*/  
-}
+    /*
+    submitted = false;
+    onSubmit() { this.submitted = true;
+    console.log('YES YES YES'); }
+    */
+
+    }
+  }
+
+};

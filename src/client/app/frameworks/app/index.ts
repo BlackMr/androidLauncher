@@ -5,6 +5,7 @@ import {provideStore} from '@ngrx/store';
 import {nameListReducer} from './services/name-list.service';
 import {MULTILINGUAL_PROVIDERS, MultilingualStateI, multilingualReducer} from '../i18n/index';
 
+
 // state definition
 export interface AppStoreI {
   i18n: MultilingualStateI;

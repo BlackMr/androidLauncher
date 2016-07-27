@@ -1,6 +1,6 @@
 import {BaseComponent} from '../../frameworks/core/index';
-import {Registrant} from './registrant';
-import {SignupFormComponent} from '../signup/signup-form.component';
+/* import {Registrant} from './registrant'; */
+import {SignupFormComponent} from '../signup/signup-form/signup-form.component';
 @BaseComponent({
   moduleId: module.id,
   selector: 'sd-signup',
