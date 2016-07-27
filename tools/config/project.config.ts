@@ -15,7 +15,9 @@ export class ProjectConfig extends SeedAdvancedConfig {
 
     // Add third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
-      ...this.NPM_DEPENDENCIES,
+      ...this.NPM_DEPENDENCIES = seedDependencies.concat(additional_deps); 
+      this.SYSTEM_CONFIG.paths['firebase'] = `${this.APP_BASE}node_modules/firebase/firebase`; 
+      this.SYSTEM_BUILDER_CONFIG.paths['firebase'] = `node_modules/firebase/firebase.js`; 
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
 

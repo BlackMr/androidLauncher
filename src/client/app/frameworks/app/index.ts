@@ -5,6 +5,12 @@ import {provideStore} from '@ngrx/store';
 import {nameListReducer} from './services/name-list.service';
 import {MULTILINGUAL_PROVIDERS, MultilingualStateI, multilingualReducer} from '../i18n/index';
 
+import {OpaqueToken} from '@angular/core';
+
+export const FIREBASE: OpaqueToken = new OpaqueToken('firebase');
+
+export * from './services/database.service';
+
 // state definition
 export interface AppStoreI {
   i18n: MultilingualStateI;
