@@ -1,4 +1,5 @@
-<GridLayout columns="auto, auto" width="100%" rows="auto" horizontalAlignment="left" class="nav">
-  <Button [nsRouterLink]="['/']" [text]="'HOME' | translate" row="0" col="0"></Button>
-  <Button [nsRouterLink]="['/about']" [text]="'ABOUT' | translate" row="0" col="1"></Button>  
+<GridLayout columns="auto, auto,auto" width="100%" rows="auto" horizontalAlignment="left" class="nav">
+  <Button class="navButtonClass" [nsRouterLink]="['/']" [text]="'HOME' | translate" row="0" col="0"></Button>
+  <Button class="navButtonClass" [nsRouterLink]="['/about']" [text]="'ABOUT' | translate" row="0" col="1"></Button>
+  <Button class="navButtonClass" [nsRouterLink]="['/support']" [text]="'SUPPORT' | translate" row="1" col="2"></Button> 
 </GridLayout>

@@ -8,6 +8,9 @@
 <p>
   {{'ABOUT_ADD' | translate}}
 </p>
+<p>
+  {{'ABOUT_REWARD2' | translate}}
+</p>
 
 <form (submit)="addName()">
   <input [(ngModel)]="newName" name="newName" [placeholder]="'INPUT_HINT' | translate">
@@ -17,3 +20,13 @@
 <ul>
   <li *ngFor="let name of nameListService.names | async">{{name}}</li>
 </ul>
+
+          
+
+ <a [routerLink]="['/signup']">{{'SIGNUP' | translate}}</a>
+      
+
+
+     
+
+    

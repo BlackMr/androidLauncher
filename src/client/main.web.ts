@@ -2,12 +2,21 @@
 import {provide, enableProdMode} from '@angular/core';
 import {disableDeprecatedForms, provideForms} from '@angular/forms';
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import {ELEMENT_PROBE_PROVIDERS} from '@angular/platform-browser';
 import {APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 // config
+<<<<<<< HEAD
 import {Config} from './app/frameworks/core/index';
 Config.PLATFORM_TARGET = Config.PLATFORMS.WEB;
 Config.DEBUG.LEVEL_4 = true;
+=======
+import {CoreConfigService, DatabaseService} from './app/frameworks/core/index';
+import {FIREBASE} from './app/frameworks/core/index';
+
+CoreConfigService.PLATFORM_TARGET = CoreConfigService.PLATFORMS.WEB;
+CoreConfigService.DEBUG.LEVEL_4 = true;
+>>>>>>> 02c051534238d75ead4d40e2c998f190666426b2
 
 // app
 import {WindowService, ConsoleService, CORE_PROVIDERS} from './app/frameworks/core/index';
@@ -19,25 +28,31 @@ import {AppComponent} from './app/components/app/app.component';
 // custom i18n language support
 MultilingualService.SUPPORTED_LANGUAGES = AppConfigService.SUPPORTED_LANGUAGES;
 
+var firebase = require('firebase');
+
 // depending on environments, you could push in different providers as needed
 const ENV_PROVIDERS: Array<any> = [];
 
 // example of how to use build variables to determine environment
 if ('<%= ENV %>' === 'prod' || '<%= TARGET_DESKTOP_BUILD %>' === 'true') {
   enableProdMode();
+} else {
+  ENV_PROVIDERS.push(ELEMENT_PROBE_PROVIDERS);
 } 
 
 let BOOTSTRAP_PROVIDERS: any[] = [
   disableDeprecatedForms(),
   provideForms(),
   ENV_PROVIDERS,
+  provide(FIREBASE, { useValue: firebase }),
   provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' }),
   provide(WindowService, { useValue: window }),
   provide(ConsoleService, { useValue: console }),
   CORE_PROVIDERS,
   ANALYTICS_PROVIDERS,
   APP_PROVIDERS,
-  APP_ROUTER_PROVIDERS
+  APP_ROUTER_PROVIDERS,
+  DatabaseService
 ];
 
 if ('<%= TARGET_DESKTOP %>' === 'true') {
