@@ -2,11 +2,12 @@
 import {provide, enableProdMode} from '@angular/core';
 import {disableDeprecatedForms, provideForms} from '@angular/forms/index';
 import {bootstrap} from '@angular/platform-browser-dynamic';
+import {ELEMENT_PROBE_PROVIDERS} from '@angular/platform-browser';
 import {APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 // config
-import {CoreConfigService} from './app/frameworks/core/index';
-import {FIREBASE} from './app/frameworks/your.framework/index';
+import {CoreConfigService, DatabaseService} from './app/frameworks/core/index';
+import {FIREBASE} from './app/frameworks/core/index';
 
 CoreConfigService.PLATFORM_TARGET = CoreConfigService.PLATFORMS.WEB;
 CoreConfigService.DEBUG.LEVEL_4 = true;
@@ -33,17 +34,11 @@ if ('<%= ENV %>' === 'prod' || '<%= TARGET_DESKTOP_BUILD %>' === 'true') {
   ENV_PROVIDERS.push(ELEMENT_PROBE_PROVIDERS);
 } 
 
-const ENV_PROVIDERS: Array<any> = [];
-if ('<%= ENV %>' === 'prod' || '<%= TARGET_DESKTOP_BUILD %>' === 'true') {
-  enableProdMode();
-} else {
-  ENV_PROVIDERS.push(ELEMENT_PROBE_PROVIDERS);
-} 
-
 let BOOTSTRAP_PROVIDERS: any[] = [
   disableDeprecatedForms(),
   provideForms(),
   ENV_PROVIDERS,
+  provide(FIREBASE, { useValue: firebase }),
   provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' }),
   provide(WindowService, { useValue: window }),
   provide(ConsoleService, { useValue: console }),

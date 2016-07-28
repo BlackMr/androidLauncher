@@ -31,6 +31,22 @@
 <body>
 
   <sd-app>Loading...</sd-app>
+  
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBnbnviMurFkLYS8sAOujQEj5pfFns9KKY",
+      authDomain: "deneme-44e80.firebaseapp.com",
+      databaseURL: "https://deneme-44e80.firebaseio.com",
+      storageBucket: "deneme-44e80.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
 
   <script>
   // Fixes undefined module function in SystemJS bundle
@@ -44,15 +60,9 @@
 
   <% if (ENV === 'dev') { %>
   <script>
-    System.config({
-        packages: {
-            "/angulartics2": {"defaultExtension": "js"}
-        }
-    });
     System.config(<%=
       JSON.stringify(SYSTEM_CONFIG, null, 2)
     %>);
-
   </script>
   <% } %>
 

@@ -1,5 +1,5 @@
 import {Injectable, Inject} from '@angular/core';
-import {FIREBASE} from '../../../app/frameworks/app/index'
+import {FIREBASE} from '../../../app/frameworks/core/index'
 
 @Injectable()
 export class NSDatabaseService {

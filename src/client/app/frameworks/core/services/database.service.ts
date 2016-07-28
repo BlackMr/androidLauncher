@@ -1,5 +1,5 @@
 import {Injectable, Inject} from '@angular/core';
-import {FIREBASE} from '../../app/index';
+import {FIREBASE} from '../../core/index';
 
 @Injectable()
 export class DatabaseService {
@@ -11,6 +11,10 @@ export class DatabaseService {
     // Initialize Firebase
     var config = {
       // your web config from Firebase console
+      apiKey: "AIzaSyBnbnviMurFkLYS8sAOujQEj5pfFns9KKY",
+      authDomain: "deneme-44e80.firebaseapp.com",
+      databaseURL: "https://deneme-44e80.firebaseio.com",
+      storageBucket: "deneme-44e80.appspot.com"
     };
     firebase.initializeApp(config);
     this.database = firebase.database();

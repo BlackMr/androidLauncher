@@ -37,7 +37,7 @@ nativeScriptBootstrap(NSAppComponent, [
   provide(HttpService, { useClass: NSHttpService }),
   provide(FIREBASE, { useValue: firebase }),
   provide(DatabaseService, { useClass: NSDatabaseService }),
-  NS_ROUTER_PROVIDERS,
+//  NS_ROUTER_PROVIDERS,
   provide(TranslateLoader, {
     useFactory: () => {
       return new TNSTranslateLoader('assets/i18n');
