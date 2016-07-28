@@ -19,8 +19,7 @@ export class REG {
     lastName: string;
     email: string;
 }
+
 */
-=======
-}
-*/
->>>>>>> 6f5d8a1e4dbeeff597280c4333224edf1b1139a3
+
+

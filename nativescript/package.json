@@ -1,9 +1,9 @@
 {
-  "name": "angular2-seed-advanced",
+  "name": "ang2seed",
   "main": "app.js",
   "version": "0.0.0",
   "nativescript": {
-    "id": "com.suggenda.deneme",
+    "id": "com.suggenda.ang2seed",
     "tns-ios": {
       "version": "2.1.1"
     },
